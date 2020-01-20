@@ -105,7 +105,6 @@ public class Review {
      return reviewscore; 
   }
 
-  
   /**
    * @returns the sentiment value of word as a number between -1 (very negative) to 1 (very positive sentiment) 
    */
