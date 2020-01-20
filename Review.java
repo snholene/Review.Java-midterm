@@ -83,6 +83,29 @@ public class Review {
     return temp.trim();
   }
   
+  public static double totalSentiment(String fileName)
+  {
+
+      String reviewwords = textToString(fileName);
+      double reviewscore = 0;
+      while (reviewwords.length() > 0)
+      {
+         if(reviewwords.indexOf(" ") == -1)
+         {
+            reviewscore += sentimentVal(reviewwords);
+            reviewwords = "";
+         }
+         else
+         {
+            String firstword = reviewwords.substring(0,reviewwords.indexOf(" "));
+            reviewscore += sentimentVal(firstword);
+            reviewwords = reviewwords.substring(firstword.length()+1,reviewwords.length());
+         }         
+     } 
+     return reviewscore; 
+  }
+
+  
   /**
    * @returns the sentiment value of word as a number between -1 (very negative) to 1 (very positive sentiment) 
    */
