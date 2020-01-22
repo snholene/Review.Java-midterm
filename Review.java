@@ -105,7 +105,32 @@ public class Review {
      return reviewscore; 
   }
 
-  
+ public static String fakeReview(String fileName)
+  {
+      String str = textToString(fileName);
+      String currWord = "";
+      String finalStr = "";
+      for(int i =0; i < str.length();i++)
+      {
+        if(!str.substring(i,i+1).equals(" "))
+            {               
+            currWord += str.substring(i, i+1);
+            }
+            
+         if(str.substring(i,i+1).equals(" "))
+         {
+         if(currWord.startsWith("*"))
+         {
+         currWord= randomAdjective();
+         }
+         finalStr += currWord;
+         currWord = "";
+         }
+         
+      }
+      return finalStr;
+  }
+    
   /**
    * @returns the sentiment value of word as a number between -1 (very negative) to 1 (very positive sentiment) 
    */
