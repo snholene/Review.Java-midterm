@@ -184,7 +184,7 @@ public static String fakeReview(String fileName)
                 if(g < 0)
                 {
                    newAdj = randomNegativeAdj();
-                   while(sentimentVal(newAdj) !< g)
+                   while(sentimentVal(newAdj)!< g)
                    {
                    newAdj = randomNegativeAdj();
                    }
@@ -192,7 +192,7 @@ public static String fakeReview(String fileName)
                 }
                 if(g > 0)
                 {
-               `   newAdj = randomPositiveAdj();
+                   newAdj = randomPositiveAdj();
                    while(sentimentVal(newAdj) !> g)
                    {
                    newAdj = randomPositiveAdj();
